@@ -3,7 +3,6 @@ package org.academiadecodigo.invictus.sinceramente.services;
 import org.academiadecodigo.invictus.sinceramente.persistence.model.Donation;
 import org.academiadecodigo.invictus.sinceramente.persistence.model.Institution;
 import org.academiadecodigo.invictus.sinceramente.persistence.model.Rating;
-import org.academiadecodigo.invictus.sinceramente.persistence.model.User;
 
 import java.util.List;
 

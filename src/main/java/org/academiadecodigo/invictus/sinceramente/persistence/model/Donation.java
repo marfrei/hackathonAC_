@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "donation")
-public class Donation implements Model {
+public class Donation extends AbstractModel {
 
 
     private User user;
