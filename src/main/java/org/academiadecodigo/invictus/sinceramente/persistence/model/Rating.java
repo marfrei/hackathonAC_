@@ -13,7 +13,7 @@ public class Rating extends AbstractModel{
 
     private User user;
     private Institution institution;
-    private Integer rate;
+    private Float rate;
     private String description;
 
 
@@ -35,11 +35,11 @@ public class Rating extends AbstractModel{
         this.institution = institution;
     }
 
-    public Integer getRate() {
+    public Float getRate() {
         return rate;
     }
 
-    public void setRate(Integer rate) {
+    public void setRate(Float rate) {
         this.rate = rate;
     }
 
