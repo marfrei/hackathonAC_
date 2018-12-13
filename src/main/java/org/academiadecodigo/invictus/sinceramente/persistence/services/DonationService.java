@@ -1,4 +1,4 @@
-package org.academiadecodigo.invictus.sinceramente.persistence.service;
+package org.academiadecodigo.invictus.sinceramente.persistence.services;
 
 import org.academiadecodigo.invictus.sinceramente.persistence.model.Donation;
 
