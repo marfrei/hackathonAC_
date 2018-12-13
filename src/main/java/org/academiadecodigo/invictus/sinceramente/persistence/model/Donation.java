@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "donation")
-public class Donation {
+public class Donation implements Model {
 
 
     private User user;
