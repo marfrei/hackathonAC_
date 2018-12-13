@@ -2,6 +2,7 @@ package org.academiadecodigo.invictus.sinceramente.persistence.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "institution")
@@ -97,6 +98,22 @@ public class Institution extends AbstractModel{
 
     public String getType() {
         return type;
+    }
+
+    public List<Donation> getDonations() {
+        return donations;
+    }
+
+    public void setDonations(List<Donation> donations) {
+        this.donations = donations;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 
     public void setType(String type) {

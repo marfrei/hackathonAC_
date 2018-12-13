@@ -2,6 +2,7 @@ package org.academiadecodigo.invictus.sinceramente.persistence.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -73,5 +74,13 @@ public class User extends AbstractModel {
     public void removeDonation(Donation donation) {
         donations.remove(donation);
         donation.setUser(null);
+    }
+
+    public List<Donation> getDonations() {
+        return donations;
+    }
+
+    public void setDonations(List<Donation> donations) {
+        this.donations = donations;
     }
 }

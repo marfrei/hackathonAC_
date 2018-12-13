@@ -1,0 +1,16 @@
+org/academiadecodigo/invictus/sinceramente/persistence/dao/Dao.class
+org/academiadecodigo/invictus/sinceramente/persistence/model/Model.class
+org/academiadecodigo/invictus/sinceramente/persistence/dao/InstitutionDao.class
+org/academiadecodigo/invictus/sinceramente/persistence/dao/JpaUserDao.class
+org/academiadecodigo/invictus/sinceramente/services/InstitutionService.class
+org/academiadecodigo/invictus/sinceramente/persistence/dao/UserDao.class
+org/academiadecodigo/invictus/sinceramente/persistence/dao/JpaInstitutionDao.class
+org/academiadecodigo/invictus/sinceramente/persistence/model/AbstractModel.class
+org/academiadecodigo/invictus/sinceramente/services/InstitutionServiceImpl.class
+org/academiadecodigo/invictus/sinceramente/persistence/model/Donation.class
+org/academiadecodigo/invictus/sinceramente/persistence/model/User.class
+org/academiadecodigo/invictus/sinceramente/services/UserServiceImpl.class
+org/academiadecodigo/invictus/sinceramente/persistence/dao/GenericDao.class
+org/academiadecodigo/invictus/sinceramente/persistence/model/Rating.class
+org/academiadecodigo/invictus/sinceramente/services/UserService.class
+org/academiadecodigo/invictus/sinceramente/persistence/model/Institution.class
