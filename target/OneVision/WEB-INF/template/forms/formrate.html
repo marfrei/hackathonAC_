@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <title>Rate Form</title>
     <h2>Rate Form</h2>
+
+    <style>
+        input[type=submit] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        input[type=text], input[type=number]  {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+    </style>
+
 </head>
 <body>
 <form th:object=$"rate" method="post" th:action=$"/onevison/formrate">
@@ -18,6 +45,8 @@
 
     <input type="submit"/>
 </form>
-
+<div class="col-sm-3">
+    <a class="btn btn-primary" th:href="@{/main}">Main Page</a>
+</div>
 </body>
 </html>
