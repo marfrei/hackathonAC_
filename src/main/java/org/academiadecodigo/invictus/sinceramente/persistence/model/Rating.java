@@ -19,7 +19,7 @@ public class Rating extends AbstractModel{
     private Institution institution;
 
     private Float rate;
-    private String description;
+    private String opinion;
 
 
     public User getUser() {
@@ -48,12 +48,12 @@ public class Rating extends AbstractModel{
         this.rate = rate;
     }
 
-    public String getDescription() {
-        return description;
+    public String getOpinion() {
+        return opinion;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setOpinion(String opinion) {
+        this.opinion = opinion;
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Rating extends AbstractModel{
                 "user=" + user +
                 ", institution=" + institution +
                 ", rate=" + rate +
-                ", description='" + description + '\'' +
+                ", description='" + opinion + '\'' +
                 '}';
     }
 }
