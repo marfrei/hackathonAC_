@@ -63,29 +63,45 @@ public class MainController {
     @RequestMapping(method = RequestMethod.POST, path = "/formuser")
     public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         if(bindingResult.hasErrors()){
-            return "user/formuser";
+            return "formuser";
         }
         User savedUser=userService.save(user);
         return "redirect:/user/"+savedUser.getId();
     }
 
-    @RequestMapping(method = RequestMethod.GET, path="/user/{uid}/institution/{iid}/donate")
-    public String addDonation(@PathVariable Integer iid, Model model){
-        Institution institution =institutionService.get(iid);
-        model.addAttribute("institution",institution);
-        return "institution/donate";
+    @RequestMapping(method = RequestMethod.GET, path="/formdonate")
+    public String addDonation( Model model){
+        //Institution institution =institutionService.get(1);
+        model.addAttribute("donation", new Donation());
+        return "forms/formdonate";
+    }
+/*
+    @RequestMapping(method = RequestMethod.POST, path = "/formdonate")
+    public String saveDonation(){
+
+        return "done";
+    }*/
+
+
+    @RequestMapping(method = RequestMethod.GET, path = "/institution/form")
+    public String addInstitution(Model model){
+        model.addAttribute("institution",new Institution());
+        return "forms/forminstitution";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/user/{uid}/institution/{iid}/donate")
-    public String saveDonation(@PathVariable Integer uid, @PathVariable Integer iid, @Valid @ModelAttribute("donation") Donation donation, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+
+
+    @RequestMapping(method = RequestMethod.POST, path = "/forminstitution")
+    public String saveInstitution(@Valid @ModelAttribute("institution") Institution institution, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         if(bindingResult.hasErrors()){
-            return "institution/donate";
+            return "forminstitution";
         }
-        donation.setInstitution(institutionService.get(iid));
-        donation.setUser(userService.get(uid));
-        userService.addDonation(donation);
-        return "redirect:/user/";
+        Institution savedInstitution = institutionService.save(institution);
+        return "redirect:/institutions";
     }
+
+
+
 
     @Autowired
     public void setInstitutionService(InstitutionService institutionService) {

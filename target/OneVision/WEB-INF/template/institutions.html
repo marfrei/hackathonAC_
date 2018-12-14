@@ -18,14 +18,16 @@
                 <th>Name</th>
                 <th>Address</th>
                 <th>Email</th>
-                <th>Show</th>
+                <th>Description</th>
             </tr>
             <tr th:each="institution : ${institutions}">
                 <td th:text="${institution.id}"></td>
                 <td th:text="${institution.name}"></td>
                 <td th:text="${institution.address}"></td>
                 <td th:text="${institution.email}"></td>
-                <td><a class="btn btn-success" th:href="@{'/institutions/' + ${institution.id}}">View</a></td>
+                <td th:text="${institution.description}"></td>
+                <td th:text="${institution.rate}"></td>
+                <td><a class="btn btn-success" th:href="@{'/formdonate/'}">Donation</a></td>
             </tr>
         </table>
 

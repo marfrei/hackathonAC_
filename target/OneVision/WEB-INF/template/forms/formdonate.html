@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Donation Form</title>
@@ -36,15 +36,17 @@
 
 </head>
 <body>
-<form th:object=$"donate" method="post" th:action=$"/onevison/formdonate">
+<form th:object="${donation}" method="post" th:action="${'/onevison/formdonate'}">
     <p> User Name </p>
-    <input type="text" th:field="*{username}" onautocomplete=""/>
+    <input type="text" th:field="*{user.name}" autofocus/>
     <p> Institution to Donate </p>
     <input type="text" th:field="*{institution}"/>
     <p> Amount </p>
     <input type="text" th:field="*{amount}"/>
     <p></p>
-    <input type="submit"/>
+    <div class="col-sm-3">
+        <a class="btn btn-primary" th:href="@{/main}">Submit</a>
+    </div>
 
 </form>
 <div>

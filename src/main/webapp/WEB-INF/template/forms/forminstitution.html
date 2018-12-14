@@ -5,7 +5,7 @@
     <title>Institution Form</title>
 
     <style>
-        input[type=submit], input[type=url], input[type=email] {
+        input[type=submit] {
             background-color: #4CAF50;
             border: none;
             color: white;
@@ -16,7 +16,7 @@
         }
     </style>
     <style>
-        input[type=text] {
+        input[type=text], input[type=url], input[type=email]  {
             width: 60%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -37,7 +37,7 @@
 <body>
 <h2>New Institution Form</h2>
 
-<form th:object="${institution}" method="post" th:action=$"/onevison/forminstitution">
+<form th:object="${institution}" method="post" th:action="${'/onevision/forminstitution'}">
     <p> Institution Name </p>
     <input type="text" th:field="*{name}" autofocus/>
     <p> Address </p>
@@ -48,6 +48,8 @@
     <input type="email" th:field="*{email}"/>
     <p> Description </p>
     <input type="text" th:field="*{description}"/>
+    <p> Rate </p>
+    <input type="text" th:field="*{rate}"/>
     <p></p>
     <input type="submit"/>
 </form>

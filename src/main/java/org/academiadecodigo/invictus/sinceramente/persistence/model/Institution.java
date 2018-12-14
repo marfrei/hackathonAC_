@@ -13,6 +13,7 @@ public class Institution extends AbstractModel{
     private String siteUrl;
     private String email;
     private String description;
+    private Integer rate;
 
     @OneToMany(
             cascade =  {CascadeType.ALL},
@@ -24,6 +25,8 @@ public class Institution extends AbstractModel{
             fetch = FetchType.LAZY
     )
     private List<Rating> ratings = new LinkedList<>();
+
+
 
     @OneToMany(
             cascade =  {CascadeType.ALL},
@@ -66,7 +69,13 @@ public class Institution extends AbstractModel{
         ratings.remove(rating);
         rating.setInstitution(null);
     }
+    public Integer getRate() {
+        return rate;
+    }
 
+    public void setRate(Integer rate) {
+        this.rate = rate;
+    }
     public String getAddress() {
         return address;
     }
