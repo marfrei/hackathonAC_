@@ -8,7 +8,6 @@ import java.util.List;
 @Table(name = "institution")
 public class Institution extends AbstractModel{
     private String name;
-    private String type;
     private String address;
     private String siteUrl;
     private String email;
@@ -96,9 +95,6 @@ public class Institution extends AbstractModel{
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
 
     public List<Donation> getDonations() {
         return donations;
@@ -116,8 +112,5 @@ public class Institution extends AbstractModel{
         this.ratings = ratings;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
 }
