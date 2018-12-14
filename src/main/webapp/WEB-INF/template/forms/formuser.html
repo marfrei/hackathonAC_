@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+    <h2>New User Form</h2>
+</head>
+<body>
+<form th:object=$"user" method="post" th:action=$"/onevison/formuser">
+    <p> User Name </p>
+    <input type="text" th:field="*{username}" autofocus/>
+    <p> Password </p>
+    <input type="password" th:field="*{password}"/>
+    <p> Name </p>
+    <input type="text" th:field="*{name}"/>
+    <p> Email </p>
+    <input type="email" th:field="*{email}"/>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>

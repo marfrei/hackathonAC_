@@ -6,16 +6,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "institution")
-public class Institution extends AbstractModel{
+public class Institution extends AbstractModel {
     private String name;
-    private String type;
     private String address;
     private String siteUrl;
     private String email;
     private String description;
 
     @OneToMany(
-            cascade =  {CascadeType.ALL},
+            cascade = {CascadeType.ALL},
 
             orphanRemoval = false,
 
@@ -26,7 +25,7 @@ public class Institution extends AbstractModel{
     private List<Donation> donations = new ArrayList<>();
 
     @OneToMany(
-            cascade =  {CascadeType.ALL},
+            cascade = {CascadeType.ALL},
 
             orphanRemoval = true,
 
@@ -86,6 +85,7 @@ public class Institution extends AbstractModel{
     public void setDescription(String description) {
         this.description = description;
     }
+
     private List<Rating> ratings = new ArrayList<>();
 
     public String getName() {
@@ -96,9 +96,6 @@ public class Institution extends AbstractModel{
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
 
     public List<Donation> getDonations() {
         return donations;
@@ -115,9 +112,5 @@ public class Institution extends AbstractModel{
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
     }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
 }
+
