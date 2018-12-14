@@ -6,8 +6,19 @@
     <h2>Donation Form</h2>
 
     <style>
-        input {
-            width: 100%;
+        input[type=submit] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        input[type=text] {
+            width: 60%;
             padding: 12px 20px;
             margin: 8px 0;
             box-sizing: border-box;
@@ -20,6 +31,9 @@
         }
     </style>
 
+
+
+
 </head>
 <body>
 <form th:object=$"donate" method="post" th:action=$"/onevison/formdonate">
@@ -29,9 +43,14 @@
     <input type="text" th:field="*{institution}"/>
     <p> Amount </p>
     <input type="text" th:field="*{amount}"/>
+    <p></p>
+    <input type="submit"/>
 
 </form>
-    <input type="submit"/>
+<div>
+
+
+</div>
 
 </body>
 </html>
