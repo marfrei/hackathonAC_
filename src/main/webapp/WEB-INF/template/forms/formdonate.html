@@ -4,17 +4,34 @@
     <meta charset="UTF-8">
     <title>Donation Form</title>
     <h2>Donation Form</h2>
+
+    <style>
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+    </style>
+
 </head>
 <body>
 <form th:object=$"donate" method="post" th:action=$"/onevison/formdonate">
     <p> User Name </p>
-    <input type="" th:field="*{username}" onautocomplete=""/>
+    <input type="text" th:field="*{username}" onautocomplete=""/>
     <p> Institution to Donate </p>
     <input type="text" th:field="*{institution}"/>
     <p> Amount </p>
     <input type="text" th:field="*{amount}"/>
-    <input type="submit"/>
+
 </form>
+    <input type="submit"/>
 
 </body>
 </html>
