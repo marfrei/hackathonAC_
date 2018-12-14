@@ -57,7 +57,7 @@ public class MainController {
     @RequestMapping(method = RequestMethod.GET, path = "/login")
     public String login(Model model){
         model.addAttribute("user",new User());
-        return "login2";
+        return "login";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/formuser")
