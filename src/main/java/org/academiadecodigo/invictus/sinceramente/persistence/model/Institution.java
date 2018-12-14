@@ -1,14 +1,14 @@
 package org.academiadecodigo.invictus.sinceramente.persistence.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
 @Table(name = "institution")
 public class Institution extends AbstractModel{
+
     private String name;
-    private String type;
     private String address;
     private String siteUrl;
     private String email;
@@ -23,9 +23,20 @@ public class Institution extends AbstractModel{
 
             fetch = FetchType.LAZY
     )
-    private List<Donation> donations = new ArrayList<>();
+    private List<Rating> ratings = new LinkedList<>();
 
     @OneToMany(
+            cascade =  {CascadeType.ALL},
+
+            orphanRemoval = false,
+
+            mappedBy = "institution",
+
+            fetch = FetchType.LAZY
+    )
+    private List<Donation> donations = new LinkedList<>();
+
+  /*  @OneToMany(
             cascade =  {CascadeType.ALL},
 
             orphanRemoval = true,
@@ -33,7 +44,7 @@ public class Institution extends AbstractModel{
             mappedBy = "institution",
 
             fetch = FetchType.LAZY
-    )
+    )*/
 
     public void addDonation(Donation donation) {
         donations.add(donation);
@@ -86,7 +97,6 @@ public class Institution extends AbstractModel{
     public void setDescription(String description) {
         this.description = description;
     }
-    private List<Rating> ratings = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -94,10 +104,6 @@ public class Institution extends AbstractModel{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public List<Donation> getDonations() {
@@ -115,9 +121,4 @@ public class Institution extends AbstractModel{
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
     }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
 }

@@ -1,6 +1,7 @@
 package org.academiadecodigo.invictus.sinceramente.persistence.model;
 
 import com.sun.tools.internal.xjc.model.Model;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -11,8 +12,12 @@ import javax.persistence.Table;
 @Table (name = "rating")
 public class Rating extends AbstractModel{
 
+    @OneToOne
     private User user;
+
+    @OneToOne
     private Institution institution;
+
     private Float rate;
     private String description;
 
@@ -21,7 +26,7 @@ public class Rating extends AbstractModel{
         return user;
     }
 
-    @OneToOne
+    @Autowired
     public void setUser(User user) {
         this.user = user;
     }
@@ -30,7 +35,7 @@ public class Rating extends AbstractModel{
         return institution;
     }
 
-    @OneToOne
+    @Autowired
     public void setInstitution(Institution institution) {
         this.institution = institution;
     }

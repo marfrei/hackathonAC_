@@ -10,8 +10,6 @@
 
     <context:component-scan base-package="org.academiadecodigo.invictus.sinceramente"/>
 
-    <tx:annotation-driven/>
-
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -30,7 +28,7 @@
         <property name="minPoolSize" value="1"/>
         <property name="maxPoolSize" value="10"/>
         <property name="acquireIncrement" value="1"/>
-        <property name="maxStatements" value="0"/>
+        <property name="maxStatements" value="10"/>
 
         <!-- destroy idle pool after 300ms -->
         <property name="idleConnectionTestPeriod" value="300"/>
@@ -39,29 +37,6 @@
         <property name="loginTimeout" value="7200"/>
 
     </bean>
-
-    <!-- /META-INF/persistence.xml -->
-    <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-        <persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
-            <!-- provider element declares the class that provides the initial factory
-                for creating an EntityManager instance -->
-            <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-            <properties>
-                <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-                <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/onevision"/>
-                <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-                <property name="hibernate.connection.username" value="root"/>
-                <property name="hibernate.connection.password" value=""/>
-                <property name="hibernate.archive.autodetection" value="class"/>
-                <property name="hibernate.show_sql" value="true"/>
-                <property name="hibernate.format_sql" value="true"/>
-                <property name="hibernate.hbm2ddl.auto" value="create"/>
-            </properties>
-
-        </persistence-unit>
-    </persistence>
-
 
     <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 
@@ -72,10 +47,10 @@
         </property>
         <property name="jpaProperties">
             <map>
-                <entry key="hibernate.show_sql" value="${prod.debug}"/>
+                <entry key="hibernate.show_sql" value="true"/>
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
                 <!-- Run as create once to initialize the schema -->
-                <!--<entry key="hibernate.hbm2ddl.auto" value="validate"/>-->
+                <entry key="hibernate.hbm2ddl.auto" value="create"/>
             </map>
         </property>
     </bean>
