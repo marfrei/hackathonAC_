@@ -6,7 +6,8 @@
 </head>
 <body>
     <h2>New User Form</h2>
-<form th:object="${user}" method="post" th:action="${'/onevision/formuser'}">
+
+    <form th:object="${user}" method="post" th:action="${'/onevision/formuser'}">
     <p> Username </p>
     <input type="text" th:field="*{username}" autofocus/>
     <p> Password </p>

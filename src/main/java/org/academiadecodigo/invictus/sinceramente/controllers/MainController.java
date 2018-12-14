@@ -1,14 +1,11 @@
 package org.academiadecodigo.invictus.sinceramente.controllers;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.academiadecodigo.invictus.sinceramente.persistence.model.Donation;
 import org.academiadecodigo.invictus.sinceramente.persistence.model.Institution;
 import org.academiadecodigo.invictus.sinceramente.persistence.model.User;
 import org.academiadecodigo.invictus.sinceramente.services.InstitutionService;
 import org.academiadecodigo.invictus.sinceramente.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,8 +32,8 @@ public class MainController {
 
     @RequestMapping(method = RequestMethod.GET, path = "institution/{iid}")
     public String showInstitution(Model model, @PathVariable Integer iid){
-        model.addAttribute(institutionService.get(iid));
-        return "institution";
+        model.addAttribute("institution",institutionService.get(iid));
+        return "institutions";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/user/{uid}")
@@ -55,6 +52,12 @@ public class MainController {
     public String editUser(@PathVariable Integer uid, Model model){
         model.addAttribute(userService.get(uid));
         return "user/signup";
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/login")
+    public String login(Model model){
+        model.addAttribute("user",new User());
+        return "login2";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/formuser")

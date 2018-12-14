@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Institution Form</title>
-    <h2>New Institution Form</h2>
 
     <style>
         input[type=submit], input[type=url], input[type=email] {
@@ -36,9 +35,11 @@
 
 </head>
 <body>
-<form th:object=$"institution" method="post" th:action=$"/onevison/forminstitution">
+<h2>New Institution Form</h2>
+
+<form th:object="${institution}" method="post" th:action=$"/onevison/forminstitution">
     <p> Institution Name </p>
-    <input type="text" th:field="*{username}" autofocus/>
+    <input type="text" th:field="*{name}" autofocus/>
     <p> Address </p>
     <input type="text" th:field="*{address}"/>
     <p> Site URL </p>
