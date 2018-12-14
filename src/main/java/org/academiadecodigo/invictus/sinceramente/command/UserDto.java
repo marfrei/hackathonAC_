@@ -14,11 +14,8 @@ public class UserDto {
     @NotNull(message = "Password is mandatory")
     private String password;
 
-    @NotNull(message = "First name is mandatory")
-    private String firstName;
-
-    @NotNull(message = "Last name is mandatory")
-    private String lastName;
+    @NotNull(message = "Name is mandatory")
+    private String name;
 
     @Email
     private String email;
@@ -47,20 +44,12 @@ public class UserDto {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {

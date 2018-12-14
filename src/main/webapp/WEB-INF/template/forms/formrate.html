@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rate Form</title>
+    <h2>Rate Form</h2>
+</head>
+<body>
+<form th:object=$"rate" method="post" th:action=$"/onevison/formrate">
+    <p> User Name </p>
+    <input type="" th:field="*{username}" onautocomplete=""/>
+    <p> Institution to Donate </p>
+    <input type="text" th:field="*{institution}"/>
+    <p> Rate </p>
+    <input type="number" th:field="*{rate}"/>
+    <p> Opinion </p>
+    <input type="text" th:field="*{opinion}"/>
+
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
