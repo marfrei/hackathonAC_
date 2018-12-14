@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          modelType="text/css"/>
+</head>
+<body>
+<div class="container">
+
+
+    <h2>Institutions List</h2>
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Show</th>
+            </tr>
+            <tr th:each="institution : ${institutions}">
+                <td th:text="${institution.id}"></td>
+                <td th:text="${institution.name}"></td>
+                <td th:text="${institution.address}"></td>
+                <td th:text="${institution.email}"></td>
+                <td><a class="btn btn-success" th:href="@{'/institutions/' + ${institution.id}}">View</a></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="col-sm-3">
+        <a class="btn btn-primary" th:href="@{/main}">Main Page</a>
+    </div>
+
+</div>
+</body>
+</html>

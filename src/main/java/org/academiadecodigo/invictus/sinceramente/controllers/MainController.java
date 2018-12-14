@@ -48,7 +48,7 @@ public class MainController {
     @RequestMapping(method = RequestMethod.GET, path = "/user/signup")
     public String addUser(Model model){
         model.addAttribute("user",new User());
-        return "user/signup";
+        return "forms/formuser";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/user/{uid}/edit")
@@ -57,10 +57,10 @@ public class MainController {
         return "user/signup";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "/user/signup")
+    @RequestMapping(method = RequestMethod.POST, path = "/formuser")
     public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         if(bindingResult.hasErrors()){
-            return "user/signup";
+            return "user/formuser";
         }
         User savedUser=userService.save(user);
         return "redirect:/user/"+savedUser.getId();

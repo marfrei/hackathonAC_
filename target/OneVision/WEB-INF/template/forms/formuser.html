@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+</head>
+<body>
+    <h2>New User Form</h2>
+<form th:object="${user}" method="post" th:action="${'/onevision/formuser'}">
+    <p> Username </p>
+    <input type="text" th:field="*{username}" autofocus/>
+    <p> Password </p>
+    <input type="password" th:field="*{password}"/>
+    <p> Name </p>
+    <input type="text" th:field="*{name}"/>
+    <p> Email </p>
+    <input type="email" th:field="*{email}"/>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>

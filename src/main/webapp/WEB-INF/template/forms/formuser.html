@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>User Form</title>
-    <h2>New User Form</h2>
 </head>
 <body>
-<form th:object=$"user" method="post" th:action=$"/onevison/formuser">
-    <p> User Name </p>
+    <h2>New User Form</h2>
+<form th:object="${user}" method="post" th:action="${'/onevision/formuser'}">
+    <p> Username </p>
     <input type="text" th:field="*{username}" autofocus/>
     <p> Password </p>
     <input type="password" th:field="*{password}"/>
