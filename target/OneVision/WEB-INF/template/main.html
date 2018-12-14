@@ -17,9 +17,9 @@
 <body>
 
 <div class="container-fluid">
-    <img id="img1" src="resources/poor.jpg">
+    <img id="img1" th:src="@{'/images/poor.jpg'}">
     <a class="btn btn-light" th:href="@{/institutions}">Institutions</a>
-    <a type="button" class="btn btn-light" th:href="@{'/user/signup'}"><button> Sign in to donate!</button></a>
+    <a class="btn btn-light" th:href="@{'/user/signup'}">Sign in to donate</a>
 </div>
 
 <div>

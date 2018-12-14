@@ -23,9 +23,9 @@ public class MainController {
     private InstitutionService institutionService;
     private UserService userService;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/")
+    @RequestMapping(method = RequestMethod.GET, path = "/main")
     public String main(){
-        return "index";
+        return "main";
     }
     @RequestMapping(method = RequestMethod.GET, path = "/institutions")
     public String listInstitutions(Model model){
