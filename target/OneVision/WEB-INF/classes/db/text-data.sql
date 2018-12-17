@@ -6,6 +6,5 @@ INSERT INTO user(ID, CREATIONTIME, UPDATETIME, VERSION, USERNAME, PASSWORD, NAME
 
 DELETE FROM institution;
 INSERT INTO institution(ID, CREATIONTIME, UPDATETIME, VERSION, NAME, ADDRESS, SITEURL,EMAIL, DESCRIPTION) VALUES
-  (1, TIMESTAMP '2017-10-10 10:18:53.819', TIMESTAMP '2017-10-10 10:22:58.578', 'Santa Casa da Misericórdia do Porto', 'Rua Joaquim Vasconcelos, 79 4050-311 Porto', 'https://www.scmp.pt/pt-pt/instituicao/instituicao-homepage', 'scmp@scmp.pt', 'A Santa Casa da Misericórdia do Porto, constituída na Ordem Jurídica Canónica, é uma instituição de caridade e assistência social, de fins filantrópicos e de utilidade pública.
+  (1, timestamp '2017-10-10 10:18:53.819', timestamp '2017-10-10 10:22:58.578', 0, 'santa casa da misericórdia do porto', 'rua joaquim vasconcelos, 79 4050-311 porto', 'https://www.scmp.pt/pt-pt/instituicao/instituicao-homepage', 'scmp@scmp.pt', 'a santa casa da misericórdia do porto, constituída na ordem jurídica canónica, é uma instituição de caridade e assistência social, de fins filantrópicos e de utilidade pública.');
 
-Na atualidade, a sua ação assenta nas seguintes áreas: Intervenção Social, Saúde, Ensino Especial, Educação, Cultura, Culto, Ambiente e Projetos Especiais. Pelo número de estabelecimentos e de utentes, pelo vasto e valioso património, pela sua digna e proeminente história, a Misericórdia do Porto é a segunda mais antiga e também uma das mais importantes.')

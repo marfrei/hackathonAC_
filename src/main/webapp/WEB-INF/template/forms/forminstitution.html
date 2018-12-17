@@ -37,7 +37,7 @@
 <body>
 <h2>New Institution Form</h2>
 
-<form th:object="${institution}" method="post" th:action="${'/onevision/forminstitution'}">
+<form th:object="${institution}" method="post" th:action="${'/onevision/forminstitution'}" accept-charset="ISO-8859-1">
     <p> Institution Name </p>
     <input type="text" th:field="*{name}" autofocus/>
     <p> Address </p>

@@ -11,7 +11,6 @@ org/academiadecodigo/invictus/sinceramente/converters/DonationToDonationDto.clas
 org/academiadecodigo/invictus/sinceramente/persistence/dao/UserDao.class
 org/academiadecodigo/invictus/sinceramente/persistence/dao/JpaInstitutionDao.class
 org/academiadecodigo/invictus/sinceramente/services/InstitutionServiceImpl.class
-Main.class
 org/academiadecodigo/invictus/sinceramente/services/UserServiceImpl.class
 org/academiadecodigo/invictus/sinceramente/services/UserService.class
 org/academiadecodigo/invictus/sinceramente/persistence/dao/DonationDao.class

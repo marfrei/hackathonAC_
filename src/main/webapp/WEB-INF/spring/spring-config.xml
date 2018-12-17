@@ -21,7 +21,7 @@
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/onevision"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/onevision?useUnicode=true&amp;characterEncoding=UTF-8"/>
         <property name="user" value="root"/>
 
         <!-- c3p0 database connection pool management properties -->
@@ -52,13 +52,13 @@
                 <!-- Run as create once to initialize the schema -->
                 <entry key="hibernate.hbm2ddl.auto" value="validate"/>
                 <!-- Insert test data if dev.schema.auto property set to create -->
-                <entry key="hibernate.hbm2ddl.import_files" value="db/test-data.sql"/>
+                <entry key="hibernate.hbm2ddl.import_files" value="db/text-data.sql"/>
                 <entry key="hibernate.hbm2ddl.import_files_sql_extractor"
                        value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor"/>
-
-
             </map>
         </property>
+
+
     </bean>
 
     <!-- Thymeleaf View Resolver, implements Spring ViewResolver interface -->
